@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+input, button, select, textarea {
+  font-family: inherit;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Custom Slim Scrollbar for modals and scroll panels */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(10, 37, 64, 0.4);
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 229, 255, 0.3);
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 229, 255, 0.6);
+  }
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 229, 255, 0.3) rgba(10, 37, 64, 0.4);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+@keyframes soundWave {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 28px;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 2s infinite ease-out;
+}
+
+.animate-soundWave {
+  animation: soundWave 1.2s infinite ease-in-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Leaflet Map styling */
+.leaflet-container {
+  background-color: #0A2540 !important;
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #0A2540 !important;
+  color: #fff !important;
+  border: 1px solid rgba(0, 229, 255, 0.4) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6) !important;
+}
+
+.leaflet-popup-tip {
+  background: #0A2540 !important;
+  border: 1px solid rgba(0, 229, 255, 0.4) !important;
+}
+
+.custom-leaflet-marker {
+  background: transparent;
+  border: none;
+}
+
+/* 3D Flip Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Header Coin Reward Animations */
+@keyframes coinJiggle {
+  0% { transform: scale(1) rotate(0deg); }
+  15% { transform: scale(1.18) rotate(-7deg); }
+  30% { transform: scale(1.22) rotate(7deg); }
+  45% { transform: scale(1.15) rotate(-4deg); }
+  60% { transform: scale(1.1) rotate(3deg); }
+  75% { transform: scale(1.05) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes coinFloatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.85);
+  }
+}
+
+.animate-coin-jiggle {
+  animation: coinJiggle 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-coin-float {
+  animation: coinFloatUp 1.2s ease-out forwards;
+}

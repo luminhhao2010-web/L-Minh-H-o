@@ -1,0 +1,6 @@
+{
+  "name": "Biển Đông Hòa Bình - Địa lí 11",
+  "description": "Ứng dụng học tập tương tác Chuyên đề Địa lí 11: Hợp tác hòa bình trong khai thác Biển Đông và liên hệ Việt Nam cùng Mascot Kiến Sáng, bản đồ số Leaflet và game trắc nghiệm tích xu.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
